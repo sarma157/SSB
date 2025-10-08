@@ -52,10 +52,36 @@ Model Waveform
 <img width="706" height="167" alt="image" src="https://github.com/user-attachments/assets/bff0d8fd-d679-444e-af37-0b34585853c1" />
 
 Program
+Am=6.6;
+fm=512;
+Ac=13.2;
+fc=5120;
+fs=512000;
+t=0:1/fs:2/fm;
+m1=Am*cos(2*%pi*fm*t);
+subplot(4,1,1);
+plot(t,m1);
+c1=Ac*cos(2*%pi*fc*t);
+subplot(4,1,2);
+plot(t,c1);
+m2=Am*cos(1.57-(2*%pi*fm*t));
+c2=Ac*cos(1.57-(2*%pi*fc*t));
+s1=c1.*m1;
+s2=c2.*m2;
+lsb=s1+s2;
+subplot(4,1,3);
+plot(t,lsb);
+usb=s1-s2;
+subplot(4,1,4);
+plot(t,usb);
 
 OUTPUT WAVEFORM
+<img width="1918" height="1051" alt="image" src="https://github.com/user-attachments/assets/68806d2c-78f3-41bc-a03a-184ef7383324" />
+
 
 TABULATION
+![WhatsApp Image 2025-10-07 at 14 26 46_5912d638](https://github.com/user-attachments/assets/4d98c2e3-a420-4ef8-a3ba-fe65446473fb)
+
 
 
 
